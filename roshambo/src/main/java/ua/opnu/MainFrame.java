@@ -9,7 +9,6 @@ import java.util.Random;
 public class MainFrame extends JFrame implements ActionListener {
 
     // --- КОНСТРУКТОР КЛАСУ ---
-    // Цей код виконується один раз при запуску
     public MainFrame(String title) throws HeadlessException {
         super(title);
 
@@ -20,7 +19,7 @@ public class MainFrame extends JFrame implements ActionListener {
         ((JComponent) getContentPane()).setBorder(
                 BorderFactory.createMatteBorder(10, 10, 10, 10, Color.WHITE));
 
-        // --- ОСЬ ВАШ КОД ДЛЯ СТВОРЕННЯ КНОПОК ---
+        
         JButton rockButton = new JButton("Камінь");
         rockButton.addActionListener(this);
         rockButton.setActionCommand("rock");
@@ -44,7 +43,6 @@ public class MainFrame extends JFrame implements ActionListener {
     }
 
     // --- МЕТОДИ ЛОГІКИ ГРИ ---
-    // Ці методи викликаються під час гри
 
     private GameShape generateShape() {
         int random = new Random().nextInt(3);
@@ -74,8 +72,6 @@ public class MainFrame extends JFrame implements ActionListener {
         return -1; // Комп'ютер виграв
     }
 
-    // --- МЕТОД-СЛУХАЧ ПОДІЙ ---
-    // Цей метод викликається КОЖЕН РАЗ, коли ви натискаєте на кнопку
 
     @Override
     public void actionPerformed(ActionEvent e) {
